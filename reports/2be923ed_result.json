@@ -1,0 +1,145 @@
+{
+  "company_name": "Novatek Teknoloji A.S.",
+  "sector": "Software / Embedded Systems",
+  "evaluation_date": "2026-03-10",
+  "mandatory_criteria": [
+    {
+      "id": "C1",
+      "name": "R&D Personnel Count",
+      "status": "MET",
+      "findings": "The company employs 38 full-time R&D personnel, exceeding the minimum requirement of 15 FTE.",
+      "evidence": "Document states 35.2 FTE R&D personnel.",
+      "recommendations": []
+    },
+    {
+      "id": "C2",
+      "name": "Domestic R&D Activities",
+      "status": "MET",
+      "findings": "All R&D activities are conducted within Turkey.",
+      "evidence": "The R&D facility is located in Gebze, Kocaeli, and all projects are based in Turkey.",
+      "recommendations": []
+    },
+    {
+      "id": "C3",
+      "name": "R&D Management Capability",
+      "status": "MET",
+      "findings": "The company demonstrates sufficient R&D management capacity with a dedicated directorate and structured project management.",
+      "evidence": "R&D directorate operates independently with its own budget and recruitment authority.",
+      "recommendations": []
+    },
+    {
+      "id": "C4",
+      "name": "Physical Access Control",
+      "status": "MET",
+      "findings": "The R&D facility has controlled access via a badge system.",
+      "evidence": "Document mentions controlled access to the R&D facility.",
+      "recommendations": []
+    },
+    {
+      "id": "C5",
+      "name": "Defined R&D Projects",
+      "status": "MET",
+      "findings": "The company has 5 active R&D projects with defined scope, duration, budget, and personnel requirements.",
+      "evidence": "Project details provided in the document.",
+      "recommendations": []
+    },
+    {
+      "id": "C6",
+      "name": "Separate Organizational Unit",
+      "status": "MET",
+      "findings": "The R&D center is organized as a separate unit within the company.",
+      "evidence": "The R&D facility is physically separated from production and administrative units.",
+      "recommendations": []
+    }
+  ],
+  "performance_indicators": [
+    {
+      "id": "P1",
+      "name": "R&D Expenditure / Revenue Ratio",
+      "score": 4,
+      "findings": "R&D expenditure has increased to 17.8% of total revenue in 2024, showing a positive trend.",
+      "recommendations": [
+        "Continue to increase R&D expenditure to maintain or improve this ratio."
+      ]
+    },
+    {
+      "id": "P2",
+      "name": "Registered Patents",
+      "score": 3,
+      "findings": "The company holds 2 granted patents and has 3 pending patents.",
+      "recommendations": [
+        "Focus on increasing the number of granted patents through innovation."
+      ]
+    },
+    {
+      "id": "P3",
+      "name": "Postgraduate Researcher Ratio",
+      "score": 4,
+      "findings": "8 out of 38 R&D personnel hold postgraduate degrees, resulting in a ratio of approximately 21%.",
+      "recommendations": [
+        "Encourage more R&D personnel to pursue postgraduate education."
+      ]
+    },
+    {
+      "id": "P4",
+      "name": "Total Researcher Ratio",
+      "score": 5,
+      "findings": "All personnel in the R&D department are researchers, resulting in a 100% ratio.",
+      "recommendations": []
+    },
+    {
+      "id": "P5",
+      "name": "New Product Revenue Ratio",
+      "score": 2,
+      "findings": "Specific revenue from new products resulting from R&D is not detailed in the document.",
+      "recommendations": [
+        "Track and report revenue from new products more explicitly."
+      ]
+    },
+    {
+      "id": "P6",
+      "name": "University-Industry Collaboration",
+      "score": 5,
+      "findings": "The company has multiple collaborations with universities and has co-authored several papers.",
+      "recommendations": [
+        "Expand collaborations to include more universities and research projects."
+      ]
+    },
+    {
+      "id": "P7",
+      "name": "International Project Support",
+      "score": 1,
+      "findings": "No mention of internationally supported R&D projects.",
+      "recommendations": [
+        "Seek opportunities for international collaboration and funding."
+      ]
+    }
+  ],
+  "overall_score": 78,
+  "eligibility_status": "ELIGIBLE",
+  "overall_assessment": "Novatek Teknoloji A.S. meets all mandatory criteria for R&D Center status and shows strong performance in several indicators, particularly in R&D management and university collaboration.",
+  "critical_gaps": [
+    "Lack of detailed reporting on revenue from new products.",
+    "No international project support."
+  ],
+  "action_plan": [
+    "Implement a system to track and report revenue from new products.",
+    "Explore opportunities for international collaboration and apply for international R&D funding."
+  ],
+  "estimated_incentives": {
+    "income_tax_exemption": "Applicable",
+    "social_security_support": "Applicable",
+    "stamp_duty_exemption": "Applicable",
+    "rd_tax_deduction": "Eligible for additional deductions based on performance improvements."
+  },
+  "_meta": {
+    "model": "gpt-4o-mini",
+    "elapsed_seconds": 31.43,
+    "token_usage": {
+      "prompt_tokens": 2561,
+      "completion_tokens": 1162,
+      "total_tokens": 3723
+    },
+    "timestamp": "2026-03-10T20:51:37.292323"
+  }
+}

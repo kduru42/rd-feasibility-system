@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R&D Center Feasibility Evaluation</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#f5f6fa;color:#1a1a2e;min-height:100vh}.layout{display:flex;min-height:100vh}.sidebar{width:220px;background:#fff;border-right:1px solid #e8eaf0;display:flex;flex-direction:column;flex-shrink:0;position:fixed;top:0;left:0;bottom:0;z-index:10}.sidebar-header{padding:20px 18px;border-bottom:1px solid #e8eaf0;font-size:12px;color:#8892a5;font-weight:600;text-transform:uppercase;letter-spacing:.8px}.sidebar-nav{padding:12px 10px;flex:1}.nav-item{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;cursor:pointer;font-size:14px;font-weight:500;color:#5a6178;transition:all .15s;margin-bottom:2px;border:none;background:none;width:100%;text-align:left}.nav-item:hover{background:#f0f2f8;color:#2d3142}.nav-item.active{background:linear-gradient(135deg,#4f6ef7,#6c8cff);color:#fff;box-shadow:0 2px 8px rgba(79,110,247,.3)}.nav-item .icon{font-size:17px;width:22px;text-align:center}.sidebar-footer{padding:16px 18px;border-top:1px solid #e8eaf0;font-size:11px;color:#a0a8bc}.main{flex:1;margin-left:220px}.topbar{background:#fff;border-bottom:1px solid #e8eaf0;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:5}.topbar-title{font-size:16px;font-weight:700;color:#2d3142;display:flex;align-items:center;gap:10px}.topbar-title .emoji{font-size:20px}.topbar-right{display:flex;align-items:center;gap:12px}.content{padding:28px 32px}.metrics-row{display:flex;gap:16px;margin-bottom:28px}.metrics-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px}.metrics-title{font-size:18px;font-weight:700;color:#2d3142}.metric-card{flex:1;background:#fff;border-radius:14px;padding:20px 24px;border:1px solid #e8eaf0;position:relative;overflow:hidden}.metric-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:14px 14px 0 0}.metric-card.blue::before{background:#4f6ef7}.metric-card.green::before{background:#22c55e}.metric-card.purple::before{background:#8b5cf6}.metric-card.amber::before{background:#f59e0b}.metric-card.red::before{background:#ef4444}.metric-label{font-size:12px;color:#8892a5;font-weight:500}.metric-value{font-size:32px;font-weight:700;margin-top:4px}.metric-value.blue{color:#4f6ef7}.metric-value.green{color:#22c55e}.metric-value.purple{color:#8b5cf6}.metric-value.amber{color:#f59e0b}.metric-value.red{color:#ef4444}.panel{background:#fff;border-radius:14px;border:1px solid #e8eaf0;padding:24px;margin-bottom:20px}.panel-title{font-size:15px;font-weight:700;color:#2d3142;display:flex;align-items:center;gap:8px;margin-bottom:18px}.panel-title .icon{font-size:18px}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}.upload-zone{border:2px dashed #d1d5e0;border-radius:12px;padding:36px;text-align:center;cursor:pointer;transition:all .2s;position:relative}.upload-zone:hover{border-color:#4f6ef7;background:rgba(79,110,247,.02)}.upload-zone .big-icon{font-size:36px;margin-bottom:10px}.upload-zone .title{font-size:14px;font-weight:600;color:#2d3142}.upload-zone .subtitle{font-size:13px;color:#8892a5;margin-top:4px}.upload-zone input[type=file]{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;cursor:pointer}.pdf-item{display:flex;align-items:center;gap:12px;padding:12px 16px;border:1px solid #e8eaf0;border-radius:10px;background:#fafbfc}.pdf-item .icon{font-size:28px}.pdf-item .info{flex:1}.pdf-item .info .name{font-size:13px;font-weight:600;color:#2d3142}.pdf-item .info .detail{font-size:11px;color:#8892a5;margin-top:2px}.btn{padding:10px 22px;border-radius:10px;font-size:13px;font-weight:600;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all .2s;font-family:'Inter',sans-serif}.btn-primary{background:linear-gradient(135deg,#4f6ef7,#6c8cff);color:#fff;box-shadow:0 2px 10px rgba(79,110,247,.25)}.btn-primary:hover{box-shadow:0 4px 16px rgba(79,110,247,.35);transform:translateY(-1px)}.btn-primary:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}.btn-outline{background:#fff;color:#5a6178;border:1px solid #e8eaf0}.btn-outline:hover{border-color:#4f6ef7;color:#4f6ef7}.btn-green{background:#22c55e;color:#fff}.btn-green:hover{background:#16a34a}.btn-red{background:#fff;color:#ef4444;border:1px solid #fecaca}.form-group{margin-bottom:18px}.form-label{display:block;font-size:13px;font-weight:600;color:#2d3142;margin-bottom:6px}.form-hint{font-size:11px;color:#a0a8bc;margin-top:4px}.form-input{width:100%;padding:10px 14px;border-radius:10px;border:1px solid #e0e3ea;background:#fafbfc;color:#2d3142;font-size:14px;font-family:'Inter',sans-serif;outline:none;transition:border-color .15s}.form-input:focus{border-color:#4f6ef7;background:#fff}.form-select{width:100%;padding:10px 14px;border-radius:10px;border:1px solid #e0e3ea;background:#fafbfc;color:#2d3142;font-size:14px;font-family:'Inter',sans-serif;outline:none;cursor:pointer}.saved-indicator{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#22c55e;font-weight:500;margin-top:8px}.criteria-row{display:flex;align-items:flex-start;gap:14px;padding:14px 16px;border-radius:10px;margin-bottom:8px;border:1px solid #f0f2f5;background:#fafbfc;transition:background .15s}.criteria-row:hover{background:#f5f6fa}.status-pill{padding:4px 12px;border-radius:8px;font-size:11px;font-weight:700;white-space:nowrap;flex-shrink:0}.pill-met{background:#dcfce7;color:#166534}.pill-partial{background:#fef3c7;color:#92400e}.pill-not{background:#fee2e2;color:#991b1b}.pill-nodata{background:#ede9fe;color:#5b21b6}.criteria-body{flex:1}.criteria-name{font-size:13px;font-weight:600;color:#2d3142}.criteria-detail{font-size:12px;color:#8892a5;margin-top:4px;line-height:1.5}.criteria-recs{font-size:11px;color:#a0a8bc;margin-top:6px;padding-top:6px;border-top:1px solid #f0f2f5;list-style:none}.criteria-recs li{margin-bottom:2px}.score-ring{width:120px;height:120px;border-radius:50%;border:5px solid #e8eaf0;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 14px}.score-ring.good{border-color:#22c55e}.score-ring.mid{border-color:#f59e0b}.score-ring.bad{border-color:#ef4444}.score-num{font-size:36px;font-weight:700;line-height:1}.score-sub{font-size:12px;color:#8892a5}.elig-pill{display:inline-block;padding:6px 18px;border-radius:20px;font-size:13px;font-weight:700}.elig-yes{background:#dcfce7;color:#166534}.elig-cond{background:#fef3c7;color:#92400e}.elig-no{background:#fee2e2;color:#991b1b}.perf-row{margin-bottom:14px}.perf-label{font-size:12px;font-weight:600;color:#2d3142;margin-bottom:4px}.perf-bar-wrap{display:flex;align-items:center;gap:10px}.perf-track{flex:1;height:8px;background:#f0f2f5;border-radius:4px;overflow:hidden}.perf-fill{height:100%;border-radius:4px;transition:width .5s ease}.perf-val{font-size:12px;font-weight:700;min-width:30px;text-align:right}.perf-note{font-size:11px;color:#a0a8bc;margin-top:2px}.action-item{padding:10px 14px;border-left:3px solid #4f6ef7;margin-bottom:8px;font-size:13px;color:#5a6178;background:#f8f9fd;border-radius:0 8px 8px 0}.gap-item{border-left-color:#ef4444;background:#fef7f7}.loading-box{text-align:center;padding:50px}.spinner{width:40px;height:40px;border:3px solid #e8eaf0;border-top-color:#4f6ef7;border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 16px}@keyframes spin{to{transform:rotate(360deg)}}.loading-text{font-size:14px;color:#5a6178}.loading-sub{font-size:12px;color:#a0a8bc;margin-top:4px}.error-bar{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:12px 18px;margin-bottom:18px;display:flex;align-items:center;justify-content:space-between;font-size:13px;color:#991b1b}.error-bar button{background:none;border:none;color:#991b1b;cursor:pointer;font-size:16px;padding:2px 6px}.refresh-btn{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#4f6ef7;font-weight:600;cursor:pointer;background:none;border:none;font-family:'Inter',sans-serif}.refresh-btn:hover{text-decoration:underline}.incentive-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.incentive-card{background:#f8f9fd;border:1px solid #e8eaf0;border-radius:10px;padding:14px}.incentive-label{font-size:11px;color:#8892a5;text-transform:uppercase;letter-spacing:.4px;margin-bottom:4px}.incentive-val{font-size:13px;color:#2d3142;font-weight:500}.download-row{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}@media(max-width:900px){.sidebar{display:none}.main{margin-left:0}.two-col{grid-template-columns:1fr}.metrics-row{flex-wrap:wrap}.metric-card{min-width:140px}}
+    </style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const{useState,useRef}=React;
+const API=window.location.origin;
+const CRITERIA_LIST=[
+    {id:'C1',label:'Min 15 FTE R&D personnel'},{id:'C2',label:'Domestic R&D activities'},
+    {id:'C3',label:'R&D management capability'},{id:'C4',label:'Physical access control'},
+    {id:'C5',label:'Defined R&D projects'},{id:'C6',label:'Separate organizational unit'},
+    {id:'P1',label:'R&D expenditure / revenue ratio'},{id:'P2',label:'Registered patents'},
+    {id:'P3',label:'Postgraduate researcher ratio'},{id:'P4',label:'Total researcher ratio'},
+    {id:'P5',label:'New product revenue ratio'},{id:'P6',label:'University collaboration'},
+    {id:'P7',label:'International project support'}
+];
+
+function App(){
+    const[page,setPage]=useState('home');
+    const[apiKey,setApiKey]=useState(localStorage.getItem('rd_api_key')||'');
+    const[model,setModel]=useState(localStorage.getItem('rd_model')||'gpt-4o-mini');
+    const[keySaved,setKeySaved]=useState(false);
+    const[uploadResult,setUploadResult]=useState(null);
+    const[evaluation,setEvaluation]=useState(null);
+    const[loading,setLoading]=useState(false);
+    const[loadingMsg,setLoadingMsg]=useState('');
+    const[error,setError]=useState('');
+    const[selectedCriteria,setSelectedCriteria]=useState(CRITERIA_LIST.map(c=>c.id));
+
+    const saveSettings=()=>{try{localStorage.setItem('rd_api_key',apiKey);localStorage.setItem('rd_model',model)}catch(e){}setKeySaved(true);setTimeout(()=>setKeySaved(false),3000)};
+
+    const toggleCriteria=(id)=>{setSelectedCriteria(prev=>prev.includes(id)?prev.filter(x=>x!==id):[...prev,id])};
+    const selectAll=()=>setSelectedCriteria(CRITERIA_LIST.map(c=>c.id));
+    const clearAll=()=>setSelectedCriteria([]);
+
+    const handleUpload=async(file)=>{
+        if(!file?.name?.toLowerCase().endsWith('.pdf')){setError('Only PDF files are accepted.');return}
+        setError('');setEvaluation(null);setLoading(true);setLoadingMsg('Uploading PDF...');
+        const fd=new FormData();fd.append('file',file);
+        try{const r=await fetch(`${API}/api/upload`,{method:'POST',body:fd});if(!r.ok){const e=await r.json();throw new Error(e.detail)}setUploadResult(await r.json())}
+        catch(e){setError(e.message)}finally{setLoading(false)}
+    };
+
+    const handleEvaluate=async()=>{
+        if(!uploadResult){setError('Please upload a PDF first.');return}
+        if(!apiKey){setError('Please set your API key in Settings.');setPage('settings');return}
+        setError('');setLoading(true);setLoadingMsg('Analyzing document with AI...');
+        const fd=new FormData();
+        fd.append('file_id',uploadResult.file_id);fd.append('file_path',uploadResult.file_path);
+        fd.append('api_key',apiKey);fd.append('model',model);
+        try{const r=await fetch(`${API}/api/evaluate`,{method:'POST',body:fd});if(!r.ok){const e=await r.json();throw new Error(e.detail)}const d=await r.json();setEvaluation(d.evaluation);setPage('results')}
+        catch(e){setError(e.message)}finally{setLoading(false)}
+    };
+
+    const resetAll=()=>{setUploadResult(null);setEvaluation(null);setError('');setPage('home')};
+    const ms=()=>{if(!evaluation?.mandatory_criteria)return{met:0,partial:0,notMet:0};const m=evaluation.mandatory_criteria;return{met:m.filter(c=>c.status==='MET').length,partial:m.filter(c=>c.status==='PARTIALLY MET').length,notMet:m.filter(c=>c.status==='NOT MET').length}};
+    const pillCls=s=>({'MET':'pill-met','PARTIALLY MET':'pill-partial','NOT MET':'pill-not'}[s]||'pill-nodata');
+    const pillLbl=s=>({'MET':'✅ Met','PARTIALLY MET':'⚠️ Partial','NOT MET':'❌ Not Met'}[s]||'❓ No Data');
+    const barCol=s=>s>=4?'#22c55e':s>=3?'#4f6ef7':s>=2?'#f59e0b':'#ef4444';
+    const sRing=s=>s>=70?'good':s>=40?'mid':'bad';
+    const eCls=s=>!s?'elig-no':s.includes('NOT')?'elig-no':s.includes('COND')?'elig-cond':'elig-yes';
+
+    return(
+        <div className="layout">
+            <div className="sidebar">
+                <div className="sidebar-header">Navigation Menu</div>
+                <div className="sidebar-nav">
+                    <button className={`nav-item ${page==='home'?'active':''}`} onClick={()=>setPage('home')}><span className="icon">🏠</span> Home</button>
+                    <button className={`nav-item ${page==='results'?'active':''}`} onClick={()=>{if(evaluation)setPage('results')}} style={!evaluation?{opacity:.4,cursor:'not-allowed'}:{}}><span className="icon">📊</span> Reports</button>
+                    <button className={`nav-item ${page==='criteria'?'active':''}`} onClick={()=>setPage('criteria')}><span className="icon">📋</span> Criteria</button>
+                    <button className={`nav-item ${page==='settings'?'active':''}`} onClick={()=>setPage('settings')}><span className="icon">⚙️</span> Settings</button>
+                </div>
+                <div className="sidebar-footer">R&D Feasibility Evaluator v1.0<br/>GTU — Spring 2025</div>
+            </div>
+            <div className="main">
+                <div className="topbar">
+                    <div className="topbar-title"><span className="emoji">📑</span>
+                        {page==='home'&&'Effective AI Report Evaluation'}
+                        {page==='settings'&&'Settings'}
+                        {page==='results'&&'Evaluation Report'}
+                        {page==='criteria'&&'R&D Center Criteria'}
+                    </div>
+                    <div className="topbar-right">
+                        {!apiKey&&<span style={{fontSize:12,color:'#ef4444',fontWeight:600}}>⚠ API Key not set</span>}
+                        {apiKey&&<span style={{fontSize:12,color:'#22c55e',fontWeight:600}}>● Connected</span>}
+                    </div>
+                </div>
+                <div className="content">
+                    {error&&<div className="error-bar"><span>⚠ {error}</span><button onClick={()=>setError('')}>×</button></div>}
+
+                    {page==='home'&&!loading&&<>
+                        <div className="metrics-header"><div><div className="metrics-title">System Metrics <span style={{fontSize:12,color:'#a0a8bc',fontWeight:400,marginLeft:8}}>Last updated: {new Date().toLocaleTimeString()}</span></div></div><button className="refresh-btn">↻ Refresh Metrics</button></div>
+                        <div className="metrics-row">
+                            <div className="metric-card blue"><div className="metric-label">🔵 Total Questions</div><div className="metric-value blue">{selectedCriteria.length}</div></div>
+                            <div className="metric-card green"><div className="metric-label">🟢 Total PDF Files</div><div className="metric-value green">{uploadResult?1:0}</div></div>
+                            <div className="metric-card purple"><div className="metric-label">🟣 Total Items</div><div className="metric-value purple">{selectedCriteria.length+(uploadResult?1:0)}</div></div>
+                        </div>
+                        <div style={{fontSize:15,fontWeight:700,color:'#2d3142',marginBottom:18,display:'flex',alignItems:'center',gap:8}}><span style={{fontSize:18}}>📂</span> Selection Manager</div>
+                        <div className="two-col">
+                            <div className="panel">
+                                <div className="panel-title"><span className="icon">✅</span> Criteria Selection<span style={{marginLeft:'auto',fontSize:12,color:'#8892a5',fontWeight:500}}>{selectedCriteria.length} of {CRITERIA_LIST.length} selected</span></div>
+                                <div style={{display:'flex',gap:8,marginBottom:14}}>
+                                    <button className="btn btn-primary" style={{padding:'6px 14px',fontSize:12}} onClick={selectAll}>Select All</button>
+                                    <button className="btn btn-outline" style={{padding:'6px 14px',fontSize:12}} onClick={clearAll}>Clear All</button>
+                                </div>
+                                <div style={{maxHeight:260,overflow:'auto'}}>
+                                    {CRITERIA_LIST.map((c,i)=>(
+                                        <label key={c.id} style={{display:'flex',alignItems:'flex-start',gap:8,padding:'7px 4px',fontSize:13,color:'#5a6178',cursor:'pointer',borderBottom:'1px solid #f5f6fa'}}>
+                                            <input type="checkbox" checked={selectedCriteria.includes(c.id)} onChange={()=>toggleCriteria(c.id)} style={{marginTop:2,accentColor:'#4f6ef7'}}/>
+                                            <span><strong style={{color:'#2d3142'}}>{c.id}</strong> — {c.label}</span>
+                                        </label>
+                                    ))}
+                                </div>
+                            </div>
+                            <div className="panel">
+                                <div className="panel-title"><span className="icon">📄</span> PDF Selection</div>
+                                <p style={{fontSize:13,color:'#8892a5',marginBottom:14}}>Upload a PDF file to include in evaluation.</p>
+                                {!uploadResult&&<div className="upload-zone"><div className="big-icon">📁</div><div className="title">Drop your PDF here</div><div className="subtitle">or click to browse</div><input type="file" accept=".pdf" onChange={e=>handleUpload(e.target.files[0])}/></div>}
+                                {uploadResult&&<><div className="pdf-item"><span className="icon">📋</span><div className="info"><div className="name">{uploadResult.filename}</div><div className="detail">{uploadResult.metadata.page_count} pages · {uploadResult.metadata.file_size_kb} KB</div></div></div><div style={{marginTop:12}}><button className="btn btn-red" onClick={()=>setUploadResult(null)} style={{fontSize:12,padding:'6px 14px'}}>✕ Remove</button></div></>}
+                            </div>
+                        </div>
+                        <div style={{marginTop:24,display:'flex',gap:12,alignItems:'center'}}>
+                            <button className="btn btn-primary" onClick={handleEvaluate} disabled={!uploadResult||!apiKey||loading} style={{padding:'12px 32px',fontSize:14}}>🚀 Start Evaluation</button>
+                            {!apiKey&&<span style={{fontSize:12,color:'#ef4444'}}>→ Set API key in <button onClick={()=>setPage('settings')} style={{background:'none',border:'none',color:'#4f6ef7',cursor:'pointer',fontWeight:600,fontFamily:'Inter',fontSize:12,textDecoration:'underline'}}>Settings</button> first.</span>}
+                        </div>
+                    </>}
+
+                    {loading&&<div className="panel"><div className="loading-box"><div className="spinner"></div><div className="loading-text">{loadingMsg}</div><div className="loading-sub">This may take 15-30 seconds.</div></div></div>}
+
+                    {page==='settings'&&<div className="panel" style={{maxWidth:560}}>
+                        <div className="panel-title"><span className="icon">🔑</span> API Configuration</div>
+                        <div className="form-group"><label className="form-label">OpenAI API Key</label><input type="password" className="form-input" placeholder="sk-proj-..." value={apiKey} onChange={e=>setApiKey(e.target.value)}/><div className="form-hint">Stored locally in your browser only. Never sent to our server.</div></div>
+                        <div className="form-group"><label className="form-label">Model</label><select className="form-select" value={model} onChange={e=>setModel(e.target.value)}><option value="gpt-4o-mini">gpt-4o-mini (Fast)</option><option value="gpt-4o">gpt-4o (High Quality)</option><option value="gpt-4-turbo">gpt-4-turbo</option></select></div>
+                        <button className="btn btn-green" onClick={saveSettings}>💾 Save Settings</button>
+                        {keySaved&&<div className="saved-indicator">✅ Settings saved.</div>}
+                    </div>}
+
+                    {page==='criteria'&&<><div className="panel">
+                        <div className="panel-title"><span className="icon">⚖️</span> Mandatory Prerequisites (C1-C6)</div>
+                        {[{id:'C1',n:'R&D Personnel Count',d:'Min 15 FTE (30 for automotive per NACE 29-30).'},{id:'C2',n:'Domestic R&D Activities',d:'All R&D must be within Turkey.'},{id:'C3',n:'R&D Management Capability',d:'Tech assets, HR, IP, project management capacity.'},{id:'C4',n:'Physical Access Control',d:'On-site verification mechanisms.'},{id:'C5',n:'Defined R&D Projects',d:'Scope, duration, budget, personnel defined.'},{id:'C6',n:'Separate Unit',d:'Separate org unit in single campus.'}].map((c,i)=>(
+                            <div key={i} style={{padding:'10px 0',borderBottom:'1px solid #f0f2f5'}}><span style={{fontWeight:700,color:'#4f6ef7',marginRight:8}}>{c.id}</span><span style={{fontWeight:600}}>{c.n}</span><div style={{fontSize:12,color:'#8892a5',marginTop:2}}>{c.d}</div></div>
+                        ))}</div>
+                        <div className="panel"><div className="panel-title"><span className="icon">📈</span> Performance Indicators (P1-P7)</div>
+                        {[{id:'P1',n:'R&D Expenditure / Revenue Ratio'},{id:'P2',n:'Registered Patents'},{id:'P3',n:'Postgrad Researcher / Total R&D Ratio'},{id:'P4',n:'Total Researcher / Total R&D Ratio'},{id:'P5',n:'New Product Revenue / Total Revenue'},{id:'P6',n:'University-Industry Collaboration'},{id:'P7',n:'International Projects'}].map((p,i)=>(
+                            <div key={i} style={{padding:'8px 0',borderBottom:'1px solid #f0f2f5',fontSize:13}}><span style={{fontWeight:700,color:'#8b5cf6',marginRight:8}}>{p.id}</span><span style={{fontWeight:500}}>{p.n}</span></div>
+                        ))}<div style={{fontSize:12,color:'#8892a5',marginTop:12}}>ℹ️ 20% YoY improvement → additional 50% R&D tax deduction (valid until 31/12/2028).</div></div>
+                    </>}
+
+                    {page==='results'&&evaluation&&!loading&&<>
+                        <div className="metrics-row">
+                            <div className="metric-card blue"><div className="metric-label">Overall Score</div><div className="metric-value blue">{evaluation.overall_score??'—'}</div></div>
+                            <div className="metric-card green"><div className="metric-label">Criteria Met</div><div className="metric-value green">{ms().met}/6</div></div>
+                            <div className="metric-card amber"><div className="metric-label">Partial</div><div className="metric-value amber">{ms().partial}</div></div>
+                            <div className="metric-card red"><div className="metric-label">Not Met</div><div className="metric-value red">{ms().notMet}</div></div>
+                        </div>
+                        <div className="two-col">
+                            <div className="panel" style={{textAlign:'center'}}>
+                                <div className="panel-title" style={{justifyContent:'center'}}><span className="icon">🎯</span> Verdict</div>
+                                <div className={`score-ring ${sRing(evaluation.overall_score||0)}`}><div className="score-num" style={{color:evaluation.overall_score>=70?'#22c55e':evaluation.overall_score>=40?'#f59e0b':'#ef4444'}}>{evaluation.overall_score??'—'}</div><div className="score-sub">/ 100</div></div>
+                                <div className={`elig-pill ${eCls(evaluation.eligibility_status)}`}>{evaluation.eligibility_status||'UNKNOWN'}</div>
+                                <p style={{marginTop:14,fontSize:13,color:'#5a6178',lineHeight:1.6,textAlign:'left'}}>{evaluation.overall_assessment}</p>
+                            </div>
+                            <div className="panel"><div className="panel-title"><span className="icon">📊</span> Performance</div>
+                                {(evaluation.performance_indicators||[]).map((p,i)=>(<div className="perf-row" key={i}><div className="perf-label">{p.id} — {p.name}</div><div className="perf-bar-wrap"><div className="perf-track"><div className="perf-fill" style={{width:`${(p.score/5)*100}%`,background:barCol(p.score)}}/></div><div className="perf-val" style={{color:barCol(p.score)}}>{p.score}/5</div></div><div className="perf-note">{p.findings}</div></div>))}
+                            </div>
+                        </div>
+                        <div className="panel"><div className="panel-title"><span className="icon">📋</span> Mandatory Criteria (C1-C6)</div>
+                            {(evaluation.mandatory_criteria||[]).map((c,i)=>(<div className="criteria-row" key={i}><span className={`status-pill ${pillCls(c.status)}`}>{pillLbl(c.status)}</span><div className="criteria-body"><div className="criteria-name">{c.id} — {c.name}</div><div className="criteria-detail">{c.findings}</div>{c.evidence&&<div style={{fontSize:11,color:'#4f6ef7',marginTop:3}}>📎 {c.evidence}</div>}{c.recommendations?.length>0&&<ul className="criteria-recs">{c.recommendations.map((r,j)=><li key={j}>→ {r}</li>)}</ul>}</div></div>))}
+                        </div>
+                        <div className="two-col">
+                            <div className="panel"><div className="panel-title"><span className="icon">⚠️</span> Critical Gaps</div>{(evaluation.critical_gaps||[]).map((g,i)=>(<div className="action-item gap-item" key={i}>{g}</div>))}{(!evaluation.critical_gaps?.length)&&<div className="action-item" style={{borderLeftColor:'#22c55e'}}>No critical gaps.</div>}</div>
+                            <div className="panel"><div className="panel-title"><span className="icon">🗺️</span> Action Plan</div>{(evaluation.action_plan||[]).map((a,i)=>(<div className="action-item" key={i}>{i+1}. {a}</div>))}</div>
+                        </div>
+                        {evaluation.estimated_incentives&&<div className="panel"><div className="panel-title"><span className="icon">💰</span> Estimated Incentives</div><div className="incentive-grid">{Object.entries(evaluation.estimated_incentives).map(([k,v])=>(<div className="incentive-card" key={k}><div className="incentive-label">{k.replace(/_/g,' ')}</div><div className="incentive-val">{v}</div></div>))}</div></div>}
+                        <div className="panel"><div className="panel-title"><span className="icon">📥</span> Export</div><div className="download-row">{uploadResult&&<><a href={`${API}/api/reports/${uploadResult.file_id}`} className="btn btn-outline" download>📝 Report (.md)</a><a href={`${API}/api/reports/${uploadResult.file_id}/json`} className="btn btn-outline" download>📦 JSON</a></>}<button className="btn btn-primary" onClick={resetAll}>🔄 New Evaluation</button></div></div>
+                        {evaluation._meta&&<div style={{textAlign:'center',padding:16,fontSize:11,color:'#a0a8bc'}}>Model: {evaluation._meta.model} · {evaluation._meta.elapsed_seconds}s · {evaluation._meta.token_usage?.total_tokens?.toLocaleString()} tokens</div>}
+                    </>}
+                </div>
+            </div>
+        </div>
+    );
+}
+ReactDOM.render(<App/>,document.getElementById('root'));
+</script>
+</body>
+</html>
